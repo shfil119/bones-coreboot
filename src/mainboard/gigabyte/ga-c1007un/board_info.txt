@@ -1,0 +1,7 @@
+Category: mini
+Board URL: https://www.gigabyte.com/Motherboard/GA-C1007UN-rev-10
+ROM package: SOIC-8
+ROM protocol: SPI
+ROM socketed: n
+Flashrom support: y
+Release year: 2013

@@ -1,0 +1,4 @@
+## SPDX-License-Identifier: GPL-2.0-only
+
+config BOARD_GIGABYTE_GA_C1007UN
+	bool "GA-C1007UN"

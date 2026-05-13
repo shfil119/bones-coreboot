@@ -1,0 +1,52 @@
+## SPDX-License-Identifier: GPL-2.0-only
+
+if BOARD_GIGABYTE_GA_C1007UN
+
+config BOARD_SPECIFIC_OPTIONS
+	def_bool y
+	select AZALIA_USE_LEGACY_VERB_TABLE
+	select NORTHBRIDGE_INTEL_SANDYBRIDGE
+	select USE_NATIVE_RAMINIT
+	select SOUTHBRIDGE_INTEL_C216
+	select SUPERIO_ITE_IT8728F
+	select BOARD_ROMSIZE_KB_4096
+	select HAVE_ACPI_TABLES
+	select HAVE_ACPI_RESUME
+	select HAVE_OPTION_TABLE
+	select HAVE_CMOS_DEFAULT
+	select INTEL_GMA_HAVE_VBT
+	select INTEL_INT15
+	select MAINBOARD_HAS_LIBGFXINIT
+	select GFX_GMA_IGNORE_PRESENCE_STRAPS
+	select SERIRQ_CONTINUOUS_MODE
+
+config RAMINIT_ENABLE_ECC # checked with udimm ecc stick
+	bool
+	default false
+
+config MAINBOARD_DIR
+	string
+	default "gigabyte/ga-c1007un"
+
+config MAINBOARD_PART_NUMBER
+	string
+	default "GA-C1007UN"
+
+config VGA_BIOS_ID
+	string
+	default "8086,0156"
+
+config DRAM_RESET_GATE_GPIO
+	int
+	default 60
+
+config USBDEBUG_HCD_INDEX # top left assuming board is laying flat
+	int
+	default 2
+
+# Override the default variant behavior, since the data.vbt is the same
+config INTEL_GMA_VBT_FILE
+	string
+	default "src/mainboard/\$(MAINBOARDDIR)/data.vbt"
+
+endif
